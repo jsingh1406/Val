@@ -126,8 +126,11 @@ function goToLovePage() {
 function moveButton() {
   const btn = document.getElementById("noBtn");
 
-  const maxX = window.innerWidth - btn.offsetWidth;
-  const maxY = window.innerHeight - btn.offsetHeight;
+  const btnWidth = btn.offsetWidth;
+  const btnHeight = btn.offsetHeight;
+
+  const maxX = window.innerWidth - btnWidth - 20;
+  const maxY = window.innerHeight - btnHeight - 20;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
