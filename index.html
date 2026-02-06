@@ -4,75 +4,97 @@
 <title>Do you want to continue?</title>
 
 <style>
- body {
+body {
   margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow: hidden;
 
-background: 
-  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url("C:\Users\Jatin singh\Downloads\aa\4K-Couple-Wallpapers.jpg");
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("./romantic.jpg");
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-
-  .container {
+.container {
   text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.45);
-  padding: 60px 100px;
-  border-radius: 25px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  padding: 20px;
+  width: 100%;
 }
 
-  h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 55px;
+h2 {
+  font-size: 50px;
   margin-bottom: 40px;
-  text-shadow: 0 0 25px rgba(255,255,255,0.9);
+  text-shadow: 0 0 25px rgba(255,255,255,0.8);
+}
+
+/* Button wrapper */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 button {
-  padding: 14px 40px;
+  padding: 16px 40px;
   font-size: 20px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: all 0.35s ease;
-  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
-/* YES BUTTON */
+/* YES */
 #yesBtn {
-  background: linear-gradient(45deg, #ff4b7d, #ff758c);
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
   color: white;
-  box-shadow: 0 10px 25px rgba(255, 75, 125, 0.6);
+  box-shadow: 0 10px 30px rgba(255, 75, 75, 0.7);
 }
 
 #yesBtn:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 15px 35px rgba(255, 75, 125, 0.9);
+  transform: scale(1.1);
 }
 
-/* NO BUTTON */
+/* NO */
 #noBtn {
-  background: rgba(255, 255, 255, 0.85);
-  color: #333;
+  background: white;
+  color: black;
   position: absolute;
-  transition: top 0.4s ease, left 0.4s ease, transform 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: top 0.4s ease, left 0.4s ease;
 }
+
+/* 📱 Mobile Responsive */
+@media (max-width: 600px) {
+
+  h2 {
+    font-size: 32px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 14px 30px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #noBtn {
+    position: relative;
+  }
+}
+
 
 #noBtn:hover {
   transform: scale(1.05);
