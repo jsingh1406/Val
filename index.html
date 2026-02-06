@@ -1,0 +1,47 @@
+import React, { useState } from "react";
+
+export default function YesNoPage() {
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+
+  const moveButton = () => {
+    const randomTop = Math.random() * 300;   // adjust range if needed
+    const randomLeft = Math.random() * 300;
+    setPosition({ top: randomTop, left: randomLeft });
+  };
+
+  const handleYes = () => {
+    alert("Yayyy! You clicked YES ❤️");
+  };
+
+  return (
+    <div
+      style={{
+        height: "100vh",
+        position: "relative",
+        textAlign: "center",
+        marginTop: "100px"
+      }}
+    >
+      <h2>Do you want to continue?</h2>
+
+      <button
+        onClick={handleYes}
+        style={{ padding: "10px 20px", marginRight: "20px" }}
+      >
+        Yes
+      </button>
+
+      <button
+        onMouseEnter={moveButton}
+        style={{
+          padding: "10px 20px",
+          position: "absolute",
+          top: position.top,
+          left: position.left
+        }}
+      >
+        No
+      </button>
+    </div>
+  );
+}
