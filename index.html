@@ -5,32 +5,63 @@
 
 <style>
   body {
-    text-align: center;
-    margin-top: 100px;
-    font-family: Arial;
+    margin: 0;
     height: 100vh;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
   }
 
+  .container {
+    text-align: center;
+    color: white;
+  }
+
+  h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+
   button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
     cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  #yesBtn {
+    background: #ff4b7d;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 75, 125, 0.7);
+  }
+
+  #yesBtn:hover {
+    transform: scale(1.1);
   }
 
   #noBtn {
+    background: #ffffff;
+    color: #333;
     position: absolute;
+    transition: top 0.4s ease, left 0.4s ease;
   }
+
 </style>
 </head>
 
 <body>
 
-<h2>Do you want to continue?</h2>
-
-<button onclick="goToLovePage()">Yes</button>
-<button id="noBtn" onmouseover="moveButton()">No</button>
+<div class="container">
+  <h2>Do you want to continue? 😏</h2>
+  <button id="yesBtn" onclick="goToLovePage()">Yes ❤️</button>
+  <button id="noBtn" onmouseover="moveButton()">No 🙈</button>
+</div>
 
 <script>
 function goToLovePage() {
@@ -39,8 +70,8 @@ function goToLovePage() {
 
 function moveButton() {
   const btn = document.getElementById("noBtn");
-  const randomTop = Math.random() * (window.innerHeight - 50);
-  const randomLeft = Math.random() * (window.innerWidth - 100);
+  const randomTop = Math.random() * (window.innerHeight - 100);
+  const randomLeft = Math.random() * (window.innerWidth - 150);
   btn.style.top = randomTop + "px";
   btn.style.left = randomLeft + "px";
 }
