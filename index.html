@@ -123,14 +123,14 @@ function goToLovePage() {
   window.location.href = "love.html";
 }
 
-function moveButton() {
-  const btn = document.getElementById("noBtn");
+const btn = document.getElementById("noBtn");
 
+function moveButton() {
   const btnWidth = btn.offsetWidth;
   const btnHeight = btn.offsetHeight;
 
-  const maxX = window.innerWidth - btnWidth - 20;
-  const maxY = window.innerHeight - btnHeight - 20;
+  const maxX = window.innerWidth - btnWidth - 10;
+  const maxY = window.innerHeight - btnHeight - 10;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
@@ -138,6 +138,16 @@ function moveButton() {
   btn.style.position = "fixed";
   btn.style.left = randomX + "px";
   btn.style.top = randomY + "px";
+}
+
+// Desktop
+btn.addEventListener("mouseover", moveButton);
+
+// Mobile
+btn.addEventListener("touchstart", function(e) {
+  e.preventDefault();   // VERY IMPORTANT
+  moveButton();
+});
 }
 
 </script>
