@@ -1,47 +1,50 @@
-import React, { useState } from "react";
+<!DOCTYPE html>
+<html>
+<head>
+<title>Do you want to continue?</title>
 
-export default function YesNoPage() {
-  const [position, setPosition] = useState({ top: 0, left: 0 });
+<style>
+  body {
+    text-align: center;
+    margin-top: 100px;
+    font-family: Arial;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
 
-  const moveButton = () => {
-    const randomTop = Math.random() * 300;   // adjust range if needed
-    const randomLeft = Math.random() * 300;
-    setPosition({ top: randomTop, left: randomLeft });
-  };
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
-  const handleYes = () => {
-    alert("Yayyy! You clicked YES ❤️");
-  };
+  #noBtn {
+    position: absolute;
+  }
+</style>
+</head>
 
-  return (
-    <div
-      style={{
-        height: "100vh",
-        position: "relative",
-        textAlign: "center",
-        marginTop: "100px"
-      }}
-    >
-      <h2>Do you want to continue?</h2>
+<body>
 
-      <button
-        onClick={handleYes}
-        style={{ padding: "10px 20px", marginRight: "20px" }}
-      >
-        Yes
-      </button>
+<h2>Do you want to continue?</h2>
 
-      <button
-        onMouseEnter={moveButton}
-        style={{
-          padding: "10px 20px",
-          position: "absolute",
-          top: position.top,
-          left: position.left
-        }}
-      >
-        No
-      </button>
-    </div>
-  );
+<button onclick="goToLovePage()">Yes</button>
+<button id="noBtn" onmouseover="moveButton()">No</button>
+
+<script>
+function goToLovePage() {
+  window.location.href = "love.html";
 }
+
+function moveButton() {
+  const btn = document.getElementById("noBtn");
+  const randomTop = Math.random() * (window.innerHeight - 50);
+  const randomLeft = Math.random() * (window.innerWidth - 100);
+  btn.style.top = randomTop + "px";
+  btn.style.left = randomLeft + "px";
+}
+</script>
+
+</body>
+</html>
