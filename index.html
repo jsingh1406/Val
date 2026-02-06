@@ -113,7 +113,7 @@ button {
 <body>
 
 <div class="container">
-  <h2>Do you want to continue? 😏</h2>
+  <h2> Will You Be My Valentine? 😏</h2>
   <button id="yesBtn" onclick="goToLovePage()">Yes ❤️</button>
   <button id="noBtn" onmouseover="moveButton()">No 🙈</button>
 </div>
@@ -123,14 +123,14 @@ function goToLovePage() {
   window.location.href = "love.html";
 }
 
-
-
 function moveButton() {
+  const btn = document.getElementById("noBtn");
+
   const btnWidth = btn.offsetWidth;
   const btnHeight = btn.offsetHeight;
 
-  const maxX = window.innerWidth - btnWidth - 10;
-  const maxY = window.innerHeight - btnHeight - 10;
+  const maxX = window.innerWidth - btnWidth - 20;
+  const maxY = window.innerHeight - btnHeight - 20;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
@@ -140,15 +140,6 @@ function moveButton() {
   btn.style.top = randomY + "px";
 }
 
-// Desktop
-btn.addEventListener("mouseover", moveButton);
-
-// Mobile
-btn.addEventListener("touchstart", function(e) {
-  e.preventDefault();   // VERY IMPORTANT
-  moveButton();
-});
-}
 
 </script>
 
