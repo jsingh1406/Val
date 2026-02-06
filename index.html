@@ -125,8 +125,8 @@ function goToLovePage() {
 
 function moveButton() {
   const btn = document.getElementById("noBtn");
-  const randomTop = Math.random() * (window.innerHeight - 100);
-  const randomLeft = Math.random() * (window.innerWidth - 150);
+  const randomTop = Math.random() * 200 - 100;
+  const randomLeft = Math.random() * 200 - 100;
   btn.style.top = randomTop + "px";
   btn.style.left = randomLeft + "px";
 }
